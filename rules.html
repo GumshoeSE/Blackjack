@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>A Simple Blackjack Game</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="styles/custom.css" />
+	</head>
+
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-black">
+				<div class="container">
+					<a class="navbar-brand" href="index.html"><i class="fa-solid fa-dragon"> Blackjack</i></a>
+					
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarCollapse"
+						aria-controls="navbarCollapse"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navbarCollapse">
+						<ul class="nav navbar-nav mr-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="index.html">
+									<i class="fa-solid">Play</i>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" href="rules.html">
+									<i class="fa-solid">Rules</i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+            <section>
+                <div class="container text-start" id="rules">
+                    <h2>The objective of blackjack</h2>
+
+                    <p class="fs-6">The objective of this simple blackjack game is to beat the dealer.</p>
+                    
+                    <h5 class="mt-4">You win against the dealer</h5>
+                    <ul class="list-group list-group-numbered  p-3">
+                        <li class="list-group-item">If you draw a hand with a higher value than the dealer's hand.</li>
+                        <li class="list-group-item">If the dealer draws a hand value that goes over 21.</li>
+                    </ul>
+                        
+                    <h5 class="mt-3">You lose against the dealer</h5>
+                    <ul class="list-group list-group-numbered p-3">
+                        <li class="list-group-item">If your hand value exceeds 21.</li>
+                        <li class="list-group-item">If the dealer draws a hand with a higher value than yours.</li>
+                    </ul>
+
+                    <p>It's a draw if you both end up with the same hand value.</p>
+
+                    <h2 class="mt-4">Hand Value</h2>
+                    <ul class="list-group p-3">
+                        <li class="list-group-item">Cards 2-10 count at face value, i.e 2 count as two, a 9 count as nine.</li>
+                        <li class="list-group-item">All face cards (Jacks, Queens, Kings) count as 10.</li>
+                        <li class="list-group-item">Ace counts as a 1 or an 11 depending on which value helps the hand the most.</li>
+                    </ul>
+                        
+                    <h2 class="mt-4">How to play</h2>
+                    <p>Each round starts with 4 cards being dealt, 2 for you and 2 for the dealer,
+                        notice that the first of the dealer's cards is dealt face down.
+                        After the cards are dealt you have two choices, 
+                        either ask for more cards by hitting the "Draw" button 
+                        or pressing the "Hold" button to pass the turn over to the dealer. 
+                        Note that if your hand value ever goes over 21
+                        you'll immediately lose without passing the turn to the dealer.
+                    </p>
+                        
+                    <p>That's all folks, good luck, you'll need it.</p>
+                </div>
+            </section>
+		</main>
+
+		<footer class="footer mt-auto py-3 bg-black text-center text-lg-start text-muted fixed-bottom">
+			<div class="text-center bg-black">
+				<span>
+					© 2022 Copyright: 
+						<a class="text-reset fw-bold text-decoration-none">
+							Ville Granfors
+						</a>
+						<a class="text-reset fw-bold text-decoration-none footer-link" href="https://github.com/GumshoeSE" target="_blank">
+							<i class="fa-brands fa-github"></i>
+						</a>
+						<a class="text-reset fw-bold text-decoration-none footer-link" href="http://www.linkedin.com/in/ville-granfors" target="_blank">
+							<i class="fa-brands fa-linkedin"></i>
+						</a>
+				</span>
+			</div>
+		</footer>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+			crossorigin="anonymous"
+		></script>
+		<script src="scripts/blackjack.js"></script>
+	</body>
+</html>

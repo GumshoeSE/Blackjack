@@ -1,0 +1,102 @@
+body {
+    padding-top: 60px;
+    margin-bottom:  60px;
+    background-color: #096C84;
+    background-image: url(../images/background-large.jpg);
+}
+
+.board-container {
+    background-color: green;
+    border: 4px solid black;
+    margin-top: 20px;
+}
+
+.board {
+    min-height: 300px;
+    background-color: darkgreen
+}
+
+.hidden {
+    display: none;
+}
+
+.card-drawn{
+    height: 235px;
+    width: 169px;
+    padding: 10px;
+    display: inline;
+}
+
+.score {
+    background-color: darkgreen;
+    border: 2px solid black;
+}
+
+.new-game-container{
+    background-color: darkgreen;
+    border-left: 2px solid black;
+}
+
+.score-container {
+    text-align: center;
+    white-space: nowrap;
+    height: 50px;
+}
+
+.score-container::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+}
+
+.centered {
+    display: inline-block;
+    vertical-align: middle;
+    width:200px;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.score::after {
+    content: attr(value);
+}
+
+.btn-circle {
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.content {
+    flex: 0 0 120px;
+}
+
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.footer-link:hover {
+    color: yellow !important;
+}
+
+#rules {
+    margin-top: 20px;
+    width: 50%;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
+
+.list-group-item {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
