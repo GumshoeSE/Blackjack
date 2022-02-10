@@ -22,7 +22,7 @@
 				const scoreLabel = isPlayer
 					? document.querySelector("#score-player")
 					: document.querySelector("#score-opponent");
-				const cardImageSrc = opponentCardValues.length == 0 ? cardBack : cardData["image"];
+				const cardImageSrc = !isPlayer && opponentCardValues.length == 0 ? cardBack : cardData["image"];
 
 				hiddenCard ??= cardData["image"];
 				deckId ??= data["deck_id"];
