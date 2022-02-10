@@ -139,22 +139,20 @@
 	}
 
 	function showResults(playerLost) {
-        const modalContent = modal.querySelector('.modal-content');
+		const modalContent = modal.querySelector(".modal-content");
 		const modalBody = modalContent.querySelector(".modal-body");
 		let message = "";
 
-		if (playerLost === null){
-            message = "A draw, almost got it!";
-            modalContent.style['color'] = 'blue';
-        } 
-		else if (playerLost){
-            message = "You lost, better luck next time!";
-            modalContent.style['color'] = 'red';
-        } 
-		else {
-            message = "You won, congratulations!";
-            modalContent.style['color'] = 'green';
-        } 
+		if (playerLost === null) {
+			message = "A draw, almost got it!";
+			modalContent.style["color"] = "blue";
+		} else if (playerLost) {
+			message = "You lost, better luck next time!";
+			modalContent.style["color"] = "red";
+		} else {
+			message = "You won, congratulations!";
+			modalContent.style["color"] = "green";
+		}
 		modalBody.innerText = message;
 		bootstrapModal.show();
 	}
