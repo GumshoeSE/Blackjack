@@ -1,6 +1,5 @@
 body {
-    padding-top: 60px;
-    margin-bottom:  60px;
+    padding-top: 20px;
     background-color: #096C84;
     background-image: url(../images/background-large.jpg);
 }
@@ -8,7 +7,7 @@ body {
 .board-container {
     background-color: green;
     border: 4px solid black;
-    margin-top: 40px;
+    margin-top: 75px;
 }
 
 .board {
@@ -90,7 +89,6 @@ body {
 }
 
 #rules {
-    margin-top: 0px;
     width: 50%;
     background-color: rgba(0,0,0,0.5);
     color: white;
