@@ -1,6 +1,6 @@
 body {
     padding-top: 60px;
-    margin-bottom:  60px;
+    margin-bottom:  40px;
     background-color: #096C84;
     background-image: url(../images/background-large.jpg);
 }
@@ -90,13 +90,21 @@ body {
 }
 
 #rules {
-    margin-top: 20px;
     width: 50%;
     background-color: rgba(0,0,0,0.5);
     color: white;
+    -ms-transform: scale(0.9, 0.9); /* IE 9 */
+    -webkit-transform: scale(0.9, 0.9); /* Safari */
+    transform: scale(0.9, 0.9);
 }
 
 .list-group-item {
     background-color: rgba(0,0,0,0.5);
     color: white;
+}
+
+#blackjack {
+    -ms-transform: scale(0.8, 0.8); /* IE 9 */
+    -webkit-transform: scale(0.8, 0.8); /* Safari */
+    transform: scale(0.8, 0.8);
 }
