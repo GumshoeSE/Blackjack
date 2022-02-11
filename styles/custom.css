@@ -1,6 +1,6 @@
 body {
-    padding-top: 20px;
-    margin-bottom:  10px;
+    padding-top: 60px;
+    margin-bottom:  60px;
     background-color: #096C84;
     background-image: url(../images/background-large.jpg);
 }
@@ -8,12 +8,12 @@ body {
 .board-container {
     background-color: green;
     border: 4px solid black;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .board {
-    min-height: 300px;
-    background-color: darkgreen
+    min-height: 250px;
+    background-color: darkgreen;
 }
 
 .hidden {
@@ -21,8 +21,8 @@ body {
 }
 
 .card-drawn{
-    height: 235px;
-    width: 169px;
+    height: auto;
+    width: 145px;
     padding: 10px;
     display: inline;
 }
@@ -90,6 +90,7 @@ body {
 }
 
 #rules {
+    margin-top: 0px;
     width: 50%;
     background-color: rgba(0,0,0,0.5);
     color: white;
@@ -101,10 +102,4 @@ body {
 .list-group-item {
     background-color: rgba(0,0,0,0.5);
     color: white;
-}
-
-#blackjack {
-    -ms-transform: scale(0.8, 0.8); /* IE 9 */
-    -webkit-transform: scale(0.8, 0.8); /* Safari */
-    transform: scale(0.8, 0.8);
 }
