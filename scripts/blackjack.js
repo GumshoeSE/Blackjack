@@ -202,8 +202,5 @@
 	document.querySelector("#replay-button").addEventListener("click", deckOfCards.replay);
 	document.querySelector("#close-button").addEventListener("click", deckOfCards.close);
 	document.querySelector("#header-close-button").addEventListener("click", deckOfCards.close);
-	document
-		.querySelector("#new-game-button")
-		.addEventListener("click", deckOfCards.dealStarterCards);
 	deckOfCards.dealStarterCards();
 })((window.deckOfCards = window.deckOfCards || {}));

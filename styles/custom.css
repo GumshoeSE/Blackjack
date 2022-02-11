@@ -1,18 +1,32 @@
 body {
-    padding-top: 40px;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
     background-color: #096C84;
     background-image: url(../images/background-large.jpg);
+    font-size: 1.5rem;
 }
 
 .board-container {
     background-color: green;
     border: 4px solid black;
-    margin-top: 75px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    min-height: 65vh;
+    height: fit-content;
 }
 
 .board {
-    min-height: 250px;
+    height: fit-content;
+    min-height: 20vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     background-color: darkgreen;
+}
+
+.button-container{
+    height: fit-content;
+    min-height: 6vh;
+    border: none !important;
 }
 
 .hidden {
@@ -20,26 +34,33 @@ body {
 }
 
 .card-drawn{
-    height: auto;
-    width: 145px;
-    padding: 10px;
+    height: 25vh;
+    width: auto;
+    padding: 1vh;
     display: inline;
+}
+
+@media only screen and (max-width: 850px) {
+    .card-drawn{
+        height: 16vh;
+        width: auto;
+        padding: 1vh;
+        display: inline;
+    }
+    html { font-size: 62.5%; } 
 }
 
 .score {
     background-color: darkgreen;
     border: 2px solid black;
-}
-
-.new-game-container{
-    background-color: darkgreen;
-    border-left: 2px solid black;
+    height: fit-content;
 }
 
 .score-container {
     text-align: center;
     white-space: nowrap;
-    height: 50px;
+    min-height: 6vh;
+    height: fit-content;
 }
 
 .score-container::before {
@@ -53,7 +74,7 @@ body {
 .centered {
     display: inline-block;
     vertical-align: middle;
-    width:200px;
+    width: 200px;
 }
 
 .center-container {
@@ -68,6 +89,8 @@ body {
 }
 
 .btn-circle {
+    min-height: 6vh;
+    width: fit-content;
     border-radius: 50%;
     border: 2px solid black;
 }
@@ -89,13 +112,25 @@ body {
 }
 
 #rules {
-    width: 50%;
+    width: 75%;
     background-color: rgba(0,0,0,0.5);
     color: white;
-    -ms-transform: scale(0.9, 0.9); /* IE 9 */
-    -webkit-transform: scale(0.9, 0.9); /* Safari */
-    transform: scale(0.9, 0.9);
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+    font-size: 0.9rem;
 }
+
+@media only screen and (min-width: 850px) {
+    #rules {
+        width: 50%;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+    }
+}
+
+
 
 .list-group-item {
     background-color: rgba(0,0,0,0.5);
