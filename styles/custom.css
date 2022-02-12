@@ -16,8 +16,8 @@ body {
 }
 
 .board {
-    height: fit-content;
-    min-height: 20vh;
+    max-height: fit-content;
+    height: 26vh;
     margin-top: 1vh;
     margin-bottom: 1vh;
     background-color: darkgreen;
