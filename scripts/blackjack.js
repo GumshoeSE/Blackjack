@@ -10,6 +10,8 @@
 
 	deckOfCards.fetchCard = async (e) => {
 		const isPlayer = e != null ? showLoadButton(e.target) : false;
+		
+		if (isPlayer) disableAllButtons();
 
 		try {
 			const res = await fetch(getFullURI());
@@ -39,7 +41,9 @@
 
 			if (score > 21)
 				showResults(isPlayer);
-			const _ = undefined;
+
+			if (isPlayer) enableAllButtons();
+
 			return isPlayer && showDrawCardButton(e.target);
 		} catch (err) {
 			return console.log(err);
@@ -110,6 +114,8 @@
 	};
 
 	deckOfCards.close = () => {
+		document.querySelector("#hold-button").classList.toggle("hidden");
+		document.querySelector("#new-game-button").classList.toggle("hidden");
 		disableAllButtons();
 	};
 
@@ -133,6 +139,7 @@
 
 	function disableAllButtons() {
 		document.querySelectorAll("button").forEach((button) => {
+			// never disable the new-game-button
 			if (button.id != "new-game-button") button.disabled = true;
 		});
 	}
@@ -191,6 +198,8 @@
 		document.querySelector("#opponent-cards-container").innerHTML = "";
 		document.querySelector("#score-player").setAttribute("value", 0);
 		document.querySelector("#score-opponent").setAttribute("value", 0);
+		document.querySelector("#hold-button").classList.remove('hidden');
+		document.querySelector("#new-game-button").classList.add("hidden");
 		playerCardValues = [];
 		opponentCardValues = [];
 		deckId = null;
@@ -198,12 +207,11 @@
 		enableAllButtons();
 	}
 
-	document
-		.querySelector("#player-draw-card-button")
-		.addEventListener("click", deckOfCards.fetchCard);
+	document.querySelector("#player-draw-card-button").addEventListener("click", deckOfCards.fetchCard);
 	document.querySelector("#hold-button").addEventListener("click", deckOfCards.hold);
 	document.querySelector("#replay-button").addEventListener("click", deckOfCards.replay);
 	document.querySelector("#close-button").addEventListener("click", deckOfCards.close);
 	document.querySelector("#header-close-button").addEventListener("click", deckOfCards.close);
+	document.querySelector("#new-game-button").addEventListener("click", deckOfCards.dealStarterCards);
 	deckOfCards.dealStarterCards();
 })((window.deckOfCards = window.deckOfCards || {}));
