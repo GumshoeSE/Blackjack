@@ -139,8 +139,7 @@
 
 	function disableAllButtons() {
 		document.querySelectorAll("button").forEach((button) => {
-			// never disable the new-game-button
-			if (button.id != "new-game-button") button.disabled = true;
+			if (button.id != "new-game-button" && button.id != "nav-button") button.disabled = true;
 		});
 	}
 
