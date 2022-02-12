@@ -8,39 +8,42 @@
 	let deckId = null;
 	let hiddenCard = null;
 
-	deckOfCards.fetchCard = (e) => {
+	deckOfCards.fetchCard = async (e) => {
 		const isPlayer = e != null ? showLoadButton(e.target) : false;
 
-		return fetch(getFullURI())
-			.then((res) => res.json())
-			.then((data) => {
-				const cardData = data["cards"][0];
-				const cardValues = isPlayer ? playerCardValues : opponentCardValues;
-				const cardContainer = isPlayer
-					? document.querySelector("#player-cards-container")
-					: document.querySelector("#opponent-cards-container");
-				const scoreLabel = isPlayer
-					? document.querySelector("#score-player")
-					: document.querySelector("#score-opponent");
-				const cardImageSrc = !isPlayer && opponentCardValues.length == 0 ? cardBack : cardData["image"];
+		try {
+			const res = await fetch(getFullURI());
+			const data = await res.json();
+			const cardData = data["cards"][0];
+			const cardValues = isPlayer ? playerCardValues : opponentCardValues;
+			const cardContainer = isPlayer
+				? document.querySelector("#player-cards-container")
+				: document.querySelector("#opponent-cards-container");
+			const scoreLabel = isPlayer
+				? document.querySelector("#score-player")
+				: document.querySelector("#score-opponent");
+			const cardImageSrc = !isPlayer && opponentCardValues.length == 0 ? cardBack : cardData["image"];
 
-				hiddenCard ??= cardData["image"];
-				deckId ??= data["deck_id"];
-				cardValues.push(cardData["value"]);
+			hiddenCard ??= cardData["image"];
+			deckId ??= data["deck_id"];
+			cardValues.push(cardData["value"]);
 
-				const card = document.createElement("img");
-				card.setAttribute("src", cardImageSrc);
-				card.setAttribute("class", "card-drawn");
-				card.setAttribute("draggable", "false");
-				cardContainer.appendChild(card);
+			const card = document.createElement("img");
+			card.setAttribute("src", cardImageSrc);
+			card.setAttribute("class", "card-drawn");
+			card.setAttribute("draggable", "false");
+			cardContainer.appendChild(card);
 
-				let score = calculateScore(cardValues, !isPlayer);
-				scoreLabel.setAttribute("value", score);
+			let score = calculateScore(cardValues, !isPlayer);
+			scoreLabel.setAttribute("value", score);
 
-				if (score > 21) showResults(isPlayer);
-			})
-			.then((_) => isPlayer && showDrawCardButton(e.target))
-			.catch((err) => console.log(err));
+			if (score > 21)
+				showResults(isPlayer);
+			const _ = undefined;
+			return isPlayer && showDrawCardButton(e.target);
+		} catch (err) {
+			return console.log(err);
+		}
 	};
 
 	deckOfCards.hold = () => {
@@ -96,14 +99,14 @@
 		deckOfCards.dealStarterCards();
 	};
 
-	deckOfCards.dealStarterCards = function () {
+	deckOfCards.dealStarterCards = async function () {
 		resetBoard();
-		deckOfCards.fetchCard();
-		deckOfCards.fetchCard();
+		await deckOfCards.fetchCard();
+		await deckOfCards.fetchCard();
 
 		const playerButton = document.querySelector("#player-draw-card-button");
-		deckOfCards.fetchCard({ target: playerButton });
-		deckOfCards.fetchCard({ target: playerButton });
+		await deckOfCards.fetchCard({ target: playerButton });
+		await deckOfCards.fetchCard({ target: playerButton });
 	};
 
 	deckOfCards.close = () => {
