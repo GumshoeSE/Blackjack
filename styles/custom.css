@@ -47,6 +47,13 @@ body {
         padding: 1vh;
         display: inline;
     }
+    .board {
+        max-height: fit-content;
+        min-height: 20vh;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+        background-color: darkgreen;
+    }
     html { font-size: 62.5%; } 
 }
 
